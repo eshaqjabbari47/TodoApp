@@ -14,8 +14,8 @@
             <li>
                 <div class="panel panel-default">
                     <div class="panel-heading task">
-                        @item.TodoTitle
-                        <a href="" class="btn btn-danger">DELETE</a>
+                        @item.TodoTitle 
+                        @Html.ActionLink("Delete", "Delete", new { id = item.TodoId },new {@class = "btn btn-danger" })
                     </div>
                 </div>
         
