@@ -22,5 +22,12 @@ namespace TodoApp.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult Delete(int id)
+        {
+            var task = db.Todos.Where(t => t.TodoId.Equals(id)).FirstOrDefault();
+            db.Todos.Remove(task);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
