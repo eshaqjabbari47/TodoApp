@@ -12,7 +12,8 @@ namespace TodoApp.Controllers
         TodoContext db = new TodoContext();
         public ActionResult Index()
         {
-            return View();
+            var todos = db.Todos.ToList();
+            return View(todos);
         }
         [HttpPost]
         public ActionResult Index(Todo todo)
