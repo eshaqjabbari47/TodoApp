@@ -13,3 +13,7 @@
     border-radius:5px;
     width:500px;
 }
+#todo-form {
+    display:flex;
+}
+#todo-add {margin-left:10px}
