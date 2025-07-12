@@ -1,9 +1,26 @@
-﻿@model TodoApp.Models.Todo
+﻿@model IEnumerable<TodoApp.Models.Todo>
 @using (Html.BeginForm())
 {
     Html.AntiForgeryToken();
     <div class="form-group" id="todo-form">
-        @Html.EditorFor(model => model.TodoTitle, new { htmlAttributes = new { @class = "form-control " } })
+        <input type="text" class="form-control" name="TodoTitle"/>
         <input type="submit" value="ADD" class="btn btn-primary" id="todo-add">
     </div>
 }
+<div>
+    <ul id="todo-list">
+        @foreach (var item in Model)
+        {
+            <li>
+                <div class="panel panel-default">
+                    <div class="panel-heading task">
+                        @item.TodoTitle
+                        <a href="" class="btn btn-danger">DELETE</a>
+                    </div>
+                </div>
+        
+            </li>
+        }
+        </ul>
+
+</div>

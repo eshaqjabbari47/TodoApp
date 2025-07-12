@@ -17,3 +17,13 @@
     display:flex;
 }
 #todo-add {margin-left:10px}
+#todo-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}

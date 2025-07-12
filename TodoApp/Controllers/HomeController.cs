@@ -20,7 +20,7 @@ namespace TodoApp.Controllers
         {
             db.Todos.Add(todo);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }
