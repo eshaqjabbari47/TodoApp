@@ -1,7 +1,13 @@
-﻿
+﻿@model TodoApp.Models.Todo
 @{
-    ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@using (Html.BeginForm())
+{ 
+    @Html.AntiForgeryToken()
+    <div class="form-group todo-form">
+        @Html.EditorFor(model => model.TodoTitle, new { htmlAttributes = new { @class = "form-control "} })
+        <input type="submit" value="ADD" class="btn btn-primary" id="todo-add" />
+    </div>
+}
 
